@@ -24,6 +24,11 @@
 ** git commit
 ** git log
 ** el archivo .gitignore
+* magit
+** Emacs
+   magit corre en Emacs, pero es natural pues Emacs sirve para editar
+   todo tipo de archivos de texto.
+
 * COMMENT Maintenance
 
 # Local Variables:
