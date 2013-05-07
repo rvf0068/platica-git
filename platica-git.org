@@ -1,0 +1,32 @@
+#+title: Git, un sistema para control de versiones
+#+author: Rafael Villarroel
+#+email: rafaelv@uaeh.edu.mx
+#+date: 7 de mayo de 2013
+
+#+setupfile: opciones-platica-git.org
+
+#+beamer: \setbeamertemplate{navigation symbols}{}
+#+beamer: \languagepath{spanish}
+
+* Introducción
+** Control de versiones
+   Terminología: repositorio
+** En la línea de comandos
+** Estados de un repositorio
+   Aquí hay que poner un diagrama como en el de la p.15 de Pro Git,
+   pero incluyendo el paso de ignorar.
+** Repositorios remotos
+* Comandos básicos
+** git config
+** git init
+** git status
+** git add
+** git commit
+** git log
+** el archivo .gitignore
+* COMMENT Maintenance
+
+# Local Variables:
+# org-latex-pdf-process: ("pdflatex -interaction nonstopmode -output-directory %o %f")
+# eval: (set-input-method "spanish-prefix")  
+# End:

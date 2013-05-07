@@ -1,0 +1,13 @@
+# FORMATO PARA PRESENTACION
+#+latex_class: beamer
+#+startup: beamer
+#+latex_class_options: [spanish,presentation,bigger]
+
+#+beamer_color_theme: shark
+#+beamer_inner_theme: chamfered [outline,shadow]
+#+beamer_outer_theme: wuerzburg [glossy,nofootline]
+
+#+latex_header: \usepackage{cabin}
+#+latex_header: \usepackage[spanish,mexico]{babel}
+
+#+options: H:2 toc:nil
