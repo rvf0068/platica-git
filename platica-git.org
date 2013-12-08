@@ -1,7 +1,8 @@
 #+title: Git, un sistema para control de versiones
 #+author: Rafael Villarroel
 #+email: rafaelv@uaeh.edu.mx
-#+date: 7 de mayo de 2013
+#+date: 11 de diciembre de 2013
+#+language: es
 
 #+setupfile: opciones-platica-git.org
 
@@ -10,11 +11,53 @@
 
 * Introducción
 ** Control de versiones
-   Terminología: repositorio
+   /Git/ es software que ayuda a llevar cuenta precisa de los cambios de
+   archivos a través del tiempo.
+
+   #+latex: \pause
+   
+   #+caption: Versiones
+   #+attr_latex: :width 10cm 
+   [[file:versionesmorse.png]]
+
 ** En la línea de comandos
+   :PROPERTIES:
+   :BEAMER_act: [<+->]
+   :END:
+
+   - Como \LaTeX, /Git/ es un programa que corre en la línea de comandos
+     (terminal).
+   - Como con \LaTeX, existen muchas interfases gráficas para /Git/.
+
+
 ** Estados de un repositorio
-   Aquí hay que poner un diagrama como en el de la p.15 de Pro Git,
-   pero incluyendo el paso de ignorar.
+
+#+BEGIN_LaTeX
+  \usetikzlibrary{positioning,shapes}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8,transform shape,head/.style={line width=2pt,draw=gray,text width=2cm,align=center}]
+    \node[head,fill=green!60!black!50] (wd) {No incluido};
+    \node[head,fill=yellow!40,right=of wd] (sa) {Guardado};
+    \node[head,fill=blue!40,right=of sa] (lr) {Modificado};
+    \node[head,fill=red!40,right=2cm of lr] (rr) {Enviado al ``índice''};
+    \begin{scope}[line width=2pt,gray]
+      \foreach \box in {wd,sa,lr,rr}
+      \draw (\box.south) -- +(0,-5cm);
+    \end{scope}
+    \begin{scope}[every node/.style={single arrow, draw=none,fill=red!50,anchor=west,align=center}]
+      \node [anchor=west,text width=2.55cm] at ([yshift=-1cm]wd.south)
+      {añadir al\\ repositorio};
+      \node [anchor=west,text width=2.8cm] at ([yshift=-2cm]sa.south)
+      {editar};
+      \node [anchor=west,text width=3.8cm] at ([yshift=-3cm]lr.south) {``stage''};
+      \node [anchor=east,text width=7.1cm,shape border rotate=180] at ([yshift=-4cm]rr.south) {``commit''};
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  
+#+END_LaTeX
+
+
 ** Repositorios remotos
 * Comandos básicos
 ** git config

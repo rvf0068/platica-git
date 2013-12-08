@@ -9,5 +9,6 @@
 
 #+latex_header: \usepackage{cabin}
 #+latex_header: \usepackage[spanish,mexico]{babel}
+#+latex_header: \usepackage{tikz}
 
 #+options: H:2 toc:nil
