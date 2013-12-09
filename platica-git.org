@@ -29,7 +29,6 @@
      (terminal).
    - Como con \LaTeX, existen muchas interfases gráficas para /Git/.
 
-
 ** Estados de un repositorio
 
 #+BEGIN_LaTeX
@@ -37,7 +36,7 @@
   \begin{center}
   \begin{tikzpicture}[scale=0.8,transform shape,head/.style={line width=2pt,draw=gray,text width=2cm,align=center}]
     \node[head,fill=green!60!black!50] (wd) {No incluido};
-    \node[head,fill=yellow!40,right=of wd] (sa) {Guardado};
+    \node[head,fill=yellow!40,right=of wd] (sa) {Guardado (``limpio'')};
     \node[head,fill=blue!40,right=of sa] (lr) {Modificado};
     \node[head,fill=red!40,right=2cm of lr] (rr) {Enviado al ``índice''};
     \begin{scope}[line width=2pt,gray]
@@ -54,14 +53,56 @@
     \end{scope}
   \end{tikzpicture}
   \end{center}
-  
 #+END_LaTeX
 
-
 ** Repositorios remotos
+   /Git/ facilita compartir repositorios en la red, para proyectos donde
+   participan varias personas.
+
+** Frame (beamer_act, not quite right)
+*** The problem on this frame
+    I want Block 1 and Block 2 to occupy the same space on successive 
+slides.
+*** OnlyEnv 1                                                     :B_onlyenv:
+    :PROPERTIES:
+    :BEAMER_env: onlyenv
+    :BEAMER_ACT: <1>
+    :END:
+**** Block 1
+     Text
+*** OnlyEnv 2                                                     :B_onlyenv:
+    :PROPERTIES:
+    :BEAMER_env: onlyenv
+    :BEAMER_ACT: <2>
+    :END:
+**** Block 2
+     Text 2
+** Things
+
+   #+attr_beamer: :overlay +-
+   - foo :: the first thing I want to talk about
+   - bar :: this is the second, follows the first
+   - baz :: third and final
+
 * Comandos básicos
 ** git config
+
+*** 
+
+#+BEGIN_SRC sh
+  $ git config --global user.name "Rafael Villarroel"
+  $ git config --global user.email "rvf0068@gmail.com"
+#+END_SRC
+
 ** git init
+
+#+BEGIN_SRC sh
+  ~$ mkdir Documents/MiDirectorio
+  ~$ cd Documents/MiDirectorio
+  ~/Documents/MiDirectorio$ git init
+  Initialized empty Git repository in /home/rafael/Documents/MiDirectorio/.git/
+#+END_SRC
+
 ** git status
 ** git add
 ** git commit

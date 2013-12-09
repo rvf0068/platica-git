@@ -10,5 +10,17 @@
 #+latex_header: \usepackage{cabin}
 #+latex_header: \usepackage[spanish,mexico]{babel}
 #+latex_header: \usepackage{tikz}
+#+latex_header: \usepackage[scaled=0.8]{luximono}
+#+latex_header: \lstset{%
+#+latex_header:     basicstyle=\ttfamily,
+#+latex_header:   }
+#+latex_header: \lstset{
+#+latex_header:   literate={í}{{\'\i}}1
+#+latex_header:            {á}{{\'a}}1
+#+latex_header:            {é}{{\'e}}1
+#+latex_header:            {ó}{{\'o}}1
+#+latex_header:            {ú}{{\'u}}1
+#+latex_header: }
 
 #+options: H:2 toc:nil
+
