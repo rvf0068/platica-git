@@ -96,6 +96,8 @@ slides.
 
 ** git init
 
+*** 
+
 #+BEGIN_SRC sh
   ~$ mkdir Documents/MiDirectorio
   ~$ cd Documents/MiDirectorio
@@ -104,10 +106,163 @@ slides.
 #+END_SRC
 
 ** git status
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  #
+  # Initial commit
+  #
+  nothing to commit (create/copy files and use "git add" to track)
+#+END_SRC
+
 ** git add
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ echo "Vamos a escribir texto" > archivo.txt
+  ~/Documents/MiDirectorio$ git add .
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  #
+  # Initial commit
+  #
+  # Changes to be committed:
+  #   (use "git rm --cached <file>..." to unstage)
+  #
+  #       new file:   archivo.txt
+  #
+#+END_SRC
+
 ** git commit
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git commit -m "Texto de prueba"
+  [master (root-commit) 39bd8d3] Texto de prueba
+   1 file changed, 1 insertion(+)
+   create mode 100644 archivo.txt
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  nothing to commit, working directory clean
+#+END_SRC
+
 ** git log
-** el archivo .gitignore
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git log
+  commit 39bd8d3b25e1bd74be6f9dbd705e4040fb3f6c78
+  Author: Rafael Villarroel <rvf0068@gmail.com>
+  Date:   Mon Dec 9 17:38:19 2013 -0600
+  
+      Texto de prueba
+#+END_SRC
+
+** 
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ echo "Escribamos otra línea" >> archivo.txt
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  # Changes not staged for commit:
+  #   (use "git add <file>..." to update what will be committed)
+  #   (use "git checkout -- <file>..." to discard changes in working directory)
+  #
+  #       modified:   archivo.txt
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+#+END_SRC
+
+** 
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git add .
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  # Changes to be committed:
+  #   (use "git reset HEAD <file>..." to unstage)
+  #
+  #       modified:   archivo.txt
+  #
+#+END_SRC
+
+** 
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git commit -m "Segunda línea"
+  [master b1a1a6e] Segunda línea
+   1 file changed, 1 insertion(+)
+  ~/Documents/MiDirectorio$ git status
+  # On branch master
+  nothing to commit (working directory clean)
+#+END_SRC
+
+** 
+
+*** 
+
+#+BEGIN_SRC sh
+  ~/Documents/MiDirectorio$ git log
+  commit b1a1a6e2664e290fa6d7d62551ffb8c261a3b876
+  Author: Rafael Villarroel <rvf0068@gmail.com>
+  Date:   Mon Dec 9 19:13:52 2013 -0600
+  
+      Segunda línea
+  
+  commit 851f37aeac01dc84d0d025f4e932d151bdb2cc54
+  Author: Rafael Villarroel <rvf0068@gmail.com>
+  Date:   Mon Dec 9 16:54:03 2013 -0600
+  
+      Texto de prueba
+#+END_SRC
+
+* Comandos no tan básicos
+
+** Compartir en internet
+
+Hay muchos sitios que dan alojamiento gratuito de repositorios de
+/Git/. El mas conocido es /github/.
+
+*** push to remote
+
+#+BEGIN_SRC sh
+  $ git remote add origin git@github.com:rvf0068/MiDirectorio.git
+  $ git push -u origin master
+  
+  ........
+  
+  To git@github.com:rvf0068/MiDirectorio.git
+   ,* [new branch]      master -> master
+  Branch master set up to track remote branch master from origin.
+#+END_SRC
+
+** Clonar
+
+También es posible bajar repositorios remotos.
+
+*** git clone 
+
+#+BEGIN_SRC sh
+  ~/Documents$ git clone git@github.com:rvf0068/MiDirectorio.git OtroDir
+  Cloning into 'OtroDir'...
+  remote: Counting objects: 6, done.
+  remote: Compressing objects: 100% (2/2), done.
+  remote: Total 6 (delta 0), reused 6 (delta 0)
+  Receiving objects: 100% (6/6), done.
+#+END_SRC
+
 * magit
 ** Emacs
    magit corre en Emacs, pero es natural pues Emacs sirve para editar
